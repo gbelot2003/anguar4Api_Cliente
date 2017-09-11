@@ -8,6 +8,16 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ImagesListComponent } from './gallery/images-list/images-list.component';
 import { ImageComponent } from './gallery/images-list/image.component';
 import { ImageDetailComponent } from './gallery/image-detail/image-detail.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
+import {Routes, RouterModule} from '@angular/router';
+
+const appRoutes: Routes = [
+  {path: '', redirectTo: '/gallery', pathMatch: 'full'},
+  {path: 'gallery', component: GalleryComponent},
+  {path: 'contact', component: ContactComponent},
+  {path: 'about', component: AboutComponent}
+];
 
 @NgModule({
   declarations: [
@@ -16,9 +26,12 @@ import { ImageDetailComponent } from './gallery/image-detail/image-detail.compon
     GalleryComponent,
     ImagesListComponent,
     ImageComponent,
-    ImageDetailComponent
+    ImageDetailComponent,
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule
   ],
   providers: [ImageService],
