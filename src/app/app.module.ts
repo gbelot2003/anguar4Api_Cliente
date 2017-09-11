@@ -2,7 +2,7 @@ import { routes } from "./app.routes";
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ImageService } from './services/image/image.service';
-
+import { HttpModule } from "@angular/http"
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar.component';
@@ -26,7 +26,8 @@ import { AboutComponent } from './about/about.component';
   ],
   imports: [
     routes,
-    BrowserModule
+    BrowserModule,
+    HttpModule,
   ],
   providers: [ImageService],
   bootstrap: [AppComponent]
