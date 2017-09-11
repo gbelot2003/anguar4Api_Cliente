@@ -8,6 +8,7 @@ import { Image } from '../../models/image';
 })
 export class ImageComponent implements OnInit {
   @Input() image: Image;
+  @Input('master') masterName: string;
   constructor() { }
 
   ngOnInit() {
